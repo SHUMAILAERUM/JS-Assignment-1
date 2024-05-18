@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+        
+ // Task 1
+var number = 5;
+var result = "";
+for (var i = 1; i <= 10; i++) {
+    result += number + " x " + i + " = " + (number * i) + "<br>";
+}
+document.write(result);
+
+// Task 2
+var a = 2, b = 1;
+var result = --a - --b + ++b + b--;
+// Stage 1: --a;
+// At this stage, a is decremented by 1, so a becomes 1.
+// Stage 2: --a - --b;
+// Now, a is pre-decremented again, so a becomes 0, and b is pre-decremented, so b becomes 0.
+// Stage 3: --a - --b + ++b;
+// a is pre-decremented once more, so a becomes -1, b is pre-incremented, so b becomes 0, then b is post-incremented, so b becomes 1.
+// Stage 4: --a - --b + ++b + b--;
+// a is pre-decremented again, so a becomes -2, b is post-decremented, so b becomes 0.
+// Now, the expression is evaluated:
+// -2 - 0 + 1 + 0 = -1
+document.write("<br>Result: " + result);
+
+// Task 3: Greeting program
+var userName = prompt("Enter your name:");
+alert("Hello, " + userName + "!");
+
+// Task 4: Multiplication table with user input
+var numInput = prompt("Enter a number (default is 5):");
+var num = numInput ? parseInt(numInput) : 5;
+var multiplicationResult = "";
+for (var i = 1; i <= 10; i++) {
+    multiplicationResult += num + " x " + i + " = " + (num * i) + "<br>";
+}
+document.write("<br>Multiplication Table for " + num + ":<br>");
+document.write(multiplicationResult);
+
+// Task 5: Subject marks calculation and display
+var subject1 = prompt("Enter name of first subject:");
+var subject2 = prompt("Enter name of second subject:");
+var subject3 = prompt("Enter name of third subject:");
+var totalMarksPerSubject = 100;
+var obtainedMarksSubject1 = parseInt(prompt("Enter obtained marks for " + subject1 + ":"));
+var obtainedMarksSubject2 = parseInt(prompt("Enter obtained marks for " + subject2 + ":"));
+var obtainedMarksSubject3 = parseInt(prompt("Enter obtained marks for " + subject3 + ":"));
+var totalObtainedMarks = obtainedMarksSubject1 + obtainedMarksSubject2 + obtainedMarksSubject3;
+var totalMarks = totalMarksPerSubject * 3;
+var percentage = (totalObtainedMarks / totalMarks) * 100;
+
+document.write("<br><br><h2>Subject Marks</h2>");
+document.write("<table>");
+document.write("<tr><th>Subject</th><th>Total Marks</th><th>Obtained Marks</th></tr>");
+document.write("<tr><td>" + subject1 + "</td><td>" + totalMarksPerSubject + "</td><td>" + obtainedMarksSubject1 + "</td></tr>");
+document.write("<tr><td>" + subject2 + "</td><td>" + totalMarksPerSubject + "</td><td>" + obtainedMarksSubject2 + "</td></tr>");
+document.write("<tr><td>" + subject3 + "</td><td>" + totalMarksPerSubject + "</td><td>" + obtainedMarksSubject3 + "</td></tr>");
+document.write("</table>");
+document.write("<br>Total Marks: " + totalMarks);
+document.write("<br>Obtained Marks: " + totalObtainedMarks);
+document.write("<br>Percentage: " + percentage.toFixed(2) + "%");
+    </script>
+</body>
+</html>
